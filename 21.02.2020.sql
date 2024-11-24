@@ -1,52 +1,52 @@
-select distinct ProductID,ProductNumber from Production.Product; --tekrarı engeller distinct 
+select distinct ProductID,ProductNumber from Production.Product; --tekrarÄ± engeller distinct 
 select * from Person.ContactType;
-select distinct TerritoryID from Sales.Customer;select * from Sales.Customer order by StoreID ; --küçükten büyüğe sıralar
-select * from Sales.Customer order by StoreID desc ; --büyükten küçüğe sıralar
-select * from Sales.Customer order by 3 desc ; -- 3.sutünu sıralar /sutüna göre sıralar
-select * from Sales.Customer order by StoreID,TerritoryID desc ;--birden fazla sıralamaya göre sıralar
-select * from Sales.Customer order by StoreID desc,TerritoryID asc; --birden fazla sıralamaya göre sıralar storeıd azalan territoryıd artan
-select * from Sales.Customer order by 3 desc,4 asc;--3.stünu azaltır ve 4. stünü artırır.
-select CustomerID as musteri from Sales.Customer;-- as -> ismi değiştirir.
+select distinct TerritoryID from Sales.Customer;select * from Sales.Customer order by StoreID ; --kÃ¼Ã§Ã¼kten bÃ¼yÃ¼ÄŸe sÄ±ralar
+select * from Sales.Customer order by StoreID desc ; --bÃ¼yÃ¼kten kÃ¼Ã§Ã¼Ã°e sÄ±ralar
+select * from Sales.Customer order by 3 desc ; -- 3.sutÃ¼nu sÄ±ralar /sutÃ¼na gÃ¶re sÄ±ralar
+select * from Sales.Customer order by StoreID,TerritoryID desc ;--birden fazla sÄ±ralamaya gÃ¶re sÄ±ralar
+select * from Sales.Customer order by StoreID desc,TerritoryID asc; --birden fazla sÄ±ralamaya gÃ¶re sÄ±ralar storeÄ±d azalan territoryÄ±d artan
+select * from Sales.Customer order by 3 desc,4 asc;--3.stÃ¼nu azaltÄ±r ve 4. stÃ¼nÃ¼ artÄ±rÄ±r.
+select CustomerID as musteri from Sales.Customer;-- as -> ismi deÃ°iÃ¾tirir.
 select*from  Sales.SalesOrderDetail;--
-select OrderQty*UnitPrice as toplamsatış from Sales.SalesOrderDetail ;--stünları çarpar orderqty unitprice çarpar
-select (OrderQty*UnitPrice)+1000 as toplamsatış from Sales.SalesOrderDetail ;--stünları çarpar orderqty unitprice çarpar ve 1000 ekler
+select OrderQty*UnitPrice as toplamsatÄ±Ã¾ from Sales.SalesOrderDetail ;--stÃ¼nlarÄ± Ã§arpar orderqty unitprice Ã§arpar
+select (OrderQty*UnitPrice)+1000 as toplamsatÄ±Ã¾ from Sales.SalesOrderDetail ;--stÃ¼nlarÄ± Ã§arpar orderqty unitprice Ã§arpar ve 1000 ekler
 
-select ((OrderQty*UnitPrice)+1000)*0.2 as toplamsatış from Sales.SalesOrderDetail ;
---stünları çarpar orderqty unitprice çarpar ve 1000 ekler ve yüzde 20sini alır.
+select ((OrderQty*UnitPrice)+1000)*0.2 as toplamsatÄ±Ã¾ from Sales.SalesOrderDetail ;
+--stÃ¼nlarÄ± Ã§arpar orderqty unitprice Ã§arpar ve 1000 ekler ve yÃ¼zde 20sini alÄ±r.
 
-select SalesOrderID,SalesOrderDetailID ,concat(SalesOrderID,'-',SalesOrderDetailID)  AS birleştirme from  Sales.SalesOrderDetail;
- --salesorderıd ile salesorderdetail birleştirir STRİNG HÜCRE BİRLEŞTİRİR.
+select SalesOrderID,SalesOrderDetailID ,concat(SalesOrderID,'-',SalesOrderDetailID)  AS birleÃ¾tirme from  Sales.SalesOrderDetail;
+ --salesorderÄ±d ile salesorderdetail birleÃ¾tirir STRÄ±NG HÃœCRE BÄ±RLEÃTÄ±RÄ±R.
 
-select*from Sales.SalesOrderDetail where ProductID>773 ;-- productıd 773ten büyük olanları getirir
-select*from Sales.SalesOrderDetail where ProductID=773 ;-- productıd 773e eşit olanları getirir
-select*from Sales.SalesOrderDetail where ProductID BETWEEN 773 and 800 ;-- productıd 773 ile 800 arasında olanları getirir.
-select*from Sales.SalesOrderDetail where ProductID!=773  ;--773TEN farklı olanları getirir
+select*from Sales.SalesOrderDetail where ProductID>773 ;-- productÄ±d 773ten bÃ¼yÃ¼k olanlarÄ± getirir
+select*from Sales.SalesOrderDetail where ProductID=773 ;-- productÄ±d 773e eÃ¾it olanlarÄ± getirir
+select*from Sales.SalesOrderDetail where ProductID BETWEEN 773 and 800 ;-- productÄ±d 773 ile 800 arasÄ±nda olanlarÄ± getirir.
+select*from Sales.SalesOrderDetail where ProductID!=773  ;--773TEN farklÄ± olanlarÄ± getirir
 
 select*from Sales.SalesOrderDetail where SalesOrderDetailID BETWEEN 3 and 8 order by OrderQty  ;
--- salesorderıd 2.kolonu 3-8 arasında olanları orderqty kolonuna göre büyükten küçüğe doğru sıralan komut
+-- salesorderÄ±d 2.kolonu 3-8 arasÄ±nda olanlarÄ± orderqty kolonuna gÃ¶re bÃ¼yÃ¼kten kÃ¼Ã§Ã¼Ã°e doÃ°ru sÄ±ralan komut
 
-select   distinct ModifiedDate from Sales.SalesOrderDetail;--tarihleri getirir tekrarı engelleyerek
+select   distinct ModifiedDate from Sales.SalesOrderDetail;--tarihleri getirir tekrarÄ± engelleyerek
 
 select*from Sales.SalesOrderDetail where ModifiedDate='2011-06-27 00:00:00.000' ;
---ilk satırdaki tarihe eşit olanını bulan komut
+--ilk satÄ±rdaki tarihe eÃ¾it olanÄ±nÄ± bulan komut
 
 select*from Sales.SalesOrderDetail where ModifiedDate>'2011-06-27 00:00:00.000'
---tarihin büyük olananını getiren komut
+--tarihin bÃ¼yÃ¼k olananÄ±nÄ± getiren komut
 
 select UnitPrice,ProductID,OrderQty from Sales.SalesOrderDetail where (UnitPrice>3000 or ProductID>777 )and OrderQty>3; 
---unitprice 3000den büyük olan veya productıd 777den büyük olanını getir ve OrderQty 3 ten büyük olanını verir.
+--unitprice 3000den bÃ¼yÃ¼k olan veya productÄ±d 777den bÃ¼yÃ¼k olanÄ±nÄ± getir ve OrderQty 3 ten bÃ¼yÃ¼k olanÄ±nÄ± verir.
 
 select UnitPrice,ProductID,OrderQty from Sales.SalesOrderDetail where (UnitPrice>3000 or ProductID in (777,778,779) )and OrderQty>3 order by ProductID desc; 
---unitprice 3000den büyük olan veya productıd 777-778-779 eşit olanını getirir ve OrderQty 3 ten büyük olanını verir.
+--unitprice 3000den bÃ¼yÃ¼k olan veya productÄ±d 777-778-779 eÃ¾it olanÄ±nÄ± getirir ve OrderQty 3 ten bÃ¼yÃ¼k olanÄ±nÄ± verir.
 
 select * from Sales.SalesOrderDetail where CarrierTrackingNumber like '%b';
---içinde b olanları getirir.
+--iÃ§inde b olanlarÄ± getirir.
 
 select * from Sales.SalesOrderDetail where CarrierTrackingNumber like '%b%';
 --ikinci harfi a olan 
 
 select * from Sales.SalesOrderDetail where CarrierTrackingNumber like '%b%' or '%d%';
---içinde b veya d olan  
+--iÃ§inde b veya d olan  
 
 select * from Sales.SalesOrderDetail where CarrierTrackingNumber like '[BD]%';
 --ilk harfi b olan veya d olan
