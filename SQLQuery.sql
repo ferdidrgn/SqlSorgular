@@ -1,34 +1,34 @@
-select * from Production.Product  /*Production.Product dosyasýndaki Hepsini seç*/
-select ProductID,ProductNumber From Production.Product /*seçili 2 sütunu getir Hepsini seç*/
-select DISTINCT /*Çoklayanlarý bulma*/ProductID ,ProductNumber From Production.Product  /*2 sütunu seç , onlarda çoklayýcýlarý (tekrar edenleri) bul (bunda çoklayýcý yok)*/
-select  DISTINCT /*Çoklayanlarý bulma*/ TerritoryID from Sales.Customer                  /*seçili 1 sütundaki çoklayýcýyýlarý (tekrar edenleri) bul*/
-select * from Sales.Customer Order By StoreID Asc /*StoreID küçükten büyüðe sýralama*/
-select * from Sales.Customer Order By StoreID Desc /*StoreID büyükten küçüðe sýralama*/
-select * from Sales.Customer Order By 3 Desc /*Sayý girince Sýradaki sütunlardan büyükten küçüðe sýralama*/
-select * from Sales.Customer Order By StoreID , TerritoryID /*Biri büyükten ,diðeri küçükten itibâren sýralýyor*/
-select * from Sales.Customer Order By StoreID Desc , TerritoryID ASC  /*Desc büyükten ,Ascküçükten itibâren sýralýyor*/
-select CustomerID as Müþteri from Sales.Customer /*CustomerID adýný Müþteri olarak deðiþtirme*/
+select * from Production.Product  /*Production.Product dosyasÄ±ndaki Hepsini seÃ§*/
+select ProductID,ProductNumber From Production.Product /*seÃ§ili 2 sÃ¼tunu getir Hepsini seÃ§*/
+select DISTINCT /*Ã‡oklayanlarÄ± bulma*/ProductID ,ProductNumber From Production.Product  /*2 sÃ¼tunu seÃ§ , onlarda Ã§oklayÄ±cÄ±larÄ± (tekrar edenleri) bul (bunda Ã§oklayÄ±cÄ± yok)*/
+select  DISTINCT /*Ã‡oklayanlarÄ± bulma*/ TerritoryID from Sales.Customer                  /*seÃ§ili 1 sÃ¼tundaki Ã§oklayÄ±cÄ±yÄ±larÄ± (tekrar edenleri) bul*/
+select * from Sales.Customer Order By StoreID Asc /*StoreID kÃ¼Ã§Ã¼kten bÃ¼yÃ¼Ã°e sÄ±ralama*/
+select * from Sales.Customer Order By StoreID Desc /*StoreID bÃ¼yÃ¼kten kÃ¼Ã§Ã¼Ã°e sÄ±ralama*/
+select * from Sales.Customer Order By 3 Desc /*SayÄ± girince SÄ±radaki sÃ¼tunlardan bÃ¼yÃ¼kten kÃ¼Ã§Ã¼Ã°e sÄ±ralama*/
+select * from Sales.Customer Order By StoreID , TerritoryID /*Biri bÃ¼yÃ¼kten ,diÃ°eri kÃ¼Ã§Ã¼kten itibÃ¢ren sÄ±ralÄ±yor*/
+select * from Sales.Customer Order By StoreID Desc , TerritoryID ASC  /*Desc bÃ¼yÃ¼kten ,AsckÃ¼Ã§Ã¼kten itibÃ¢ren sÄ±ralÄ±yor*/
+select CustomerID as MÃ¼Ã¾teri from Sales.Customer /*CustomerID adÄ±nÄ± MÃ¼Ã¾teri olarak deÃ°iÃ¾tirme*/
 
-/*Matematiksel (Ýnteger) Ýþlemler*/
+/*Matematiksel (Ä±nteger) Ä±Ã¾lemler*/
 
 select OrderQty,UnitPrice, OrderQty*UnitPrice AS ToplamSatis from Sales.SalesOrderDetail /**/
-select OrderQty,UnitPrice, ((OrderQty*UnitPrice+1000)*0.2) AS ToplamSatis from Sales.SalesOrderDetail /**1000 ile toplayýp %20 alma*/
+select OrderQty,UnitPrice, ((OrderQty*UnitPrice+1000)*0.2) AS ToplamSatis from Sales.SalesOrderDetail /**1000 ile toplayÄ±p %20 alma*/
  
- /*Metinsel (String) Ýþlemler*/
+ /*Metinsel (String) Ä±Ã¾lemler*/
 
- select SalesOrderID, SalesOrderDetailID ,concat(SalesOrderID ,'-', SalesOrderDetailID) as Birleþtirme from Sales.SalesOrderDetail /*Ýlk iki sütunu birleþtirme ve ad koyma*/
- select * from Sales.SalesOrderDetail Where ProductID > 773 /*ProductID 773 den büyük olanlar*/
- select * from Sales.SalesOrderDetail Where ProductID between 772 and 773 /*ProductID 772 ile 773 arasý*/
-
-
- Derste yoktum.... (Turnuva)
+ select SalesOrderID, SalesOrderDetailID ,concat(SalesOrderID ,'-', SalesOrderDetailID) as BirleÃ¾tirme from Sales.SalesOrderDetail /*Ä±lk iki sÃ¼tunu birleÃ¾tirme ve ad koyma*/
+ select * from Sales.SalesOrderDetail Where ProductID > 773 /*ProductID 773 den bÃ¼yÃ¼k olanlar*/
+ select * from Sales.SalesOrderDetail Where ProductID between 772 and 773 /*ProductID 772 ile 773 arasÄ±*/
 
 
+ Derste yoktum...
 
 
 
 
 
-select * From Sales.SalesOrderDetail Where CarrierTrackingNumber LIKE '[BD]%' /*Ýçinde B ya da D olanlar*/
+
+
+select * From Sales.SalesOrderDetail Where CarrierTrackingNumber LIKE '[BD]%' /*Ä±Ã§inde B ya da D olanlar*/
 
  
